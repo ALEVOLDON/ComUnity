@@ -1,0 +1,322 @@
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #1a202c;
+    --card-bg: #ffffff;
+    --border-color: #4a90e2;
+    --gradient-start: #4a90e2;
+    --gradient-end: #50e3c2;
+    --header-bg: #ffffff;
+    --header-text: #1a202c;
+    --link-color: #4a90e2;
+    --link-hover-color: #3b82f6;
+    --button-text-color: #ffffff;
+    --hero-gradient-from: #3b82f6; 
+    --hero-gradient-to: #14b8a6;   
+    --roadmap-item-circle-bg: #4a90e2;
+    --roadmap-item-title-color: #2563eb; 
+    --roadmap-item-text-color: #4b5563; 
+    --roadmap-item-list-text-color: #374151; 
+    --section-bg-gray: #f3f4f6; 
+    --contact-bg: #3b82f6; 
+    --contact-text-color: #ffffff;
+    --contact-input-bg: #ffffff;
+    --contact-input-text: #1f2937; 
+    --contact-button-bg: #14b8a6; 
+    --contact-button-hover-bg: #0d9488; 
+    --footer-bg: #1f2937; 
+    --footer-text: #d1d5db; 
+    --details-card-bg: var(--card-bg);
+    --details-title-color: var(--roadmap-item-title-color);
+    --details-text-color: var(--roadmap-item-list-text-color);
+    --details-strong-color: var(--text-color); 
+    --mobile-menu-bg: var(--header-bg);
+    --mobile-menu-text: var(--header-text);
+    --burger-icon-color: var(--header-text);
+}
+
+.dark {
+    --bg-color: #111827; 
+    --text-color: #f3f4f6; 
+    --card-bg: #1f2937;   
+    --border-color: #60a5fa; 
+    --gradient-start: #60a5fa;
+    --gradient-end: #34d399;
+    --header-bg: #1f2937; 
+    --header-text: #f3f4f6; 
+    --link-color: #60a5fa;
+    --link-hover-color: #93c5fd; 
+    --hero-gradient-from: #2563eb; 
+    --hero-gradient-to: #0d9488;   
+    --roadmap-item-circle-bg: #60a5fa;
+    --roadmap-item-title-color: #93c5fd; 
+    --roadmap-item-text-color: #9ca3af; 
+    --roadmap-item-list-text-color: #d1d5db; 
+    --section-bg-gray: #1f2937; 
+    --contact-bg: #2563eb; 
+    --contact-text-color: #f3f4f6;
+    --contact-input-bg: #374151; 
+    --contact-input-text: #f3f4f6;
+    --contact-button-bg: #0d9488; 
+    --contact-button-hover-bg: #0f766e; 
+    --footer-bg: #111827; 
+    --footer-text: #9ca3af; 
+    --details-strong-color: var(--text-color);
+    --mobile-menu-bg: var(--header-bg);
+    --mobile-menu-text: var(--header-text);
+    --burger-icon-color: var(--header-text);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; 
+}
+.details-card {
+    background-color: var(--details-card-bg);
+    color: var(--details-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.details-card h3, .details-card h4 {
+    color: var(--details-title-color);
+}
+.details-card ul li {
+     margin-bottom: 0.5rem;
+}
+.details-card p strong { 
+    color: var(--details-strong-color);
+    font-weight: 600; 
+}
+
+.roadmap-item {
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.roadmap-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dark .roadmap-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.05), 0 4px 6px -2px rgba(255, 255, 255, 0.03);
+}
+.gradient-text {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.tech-stack-item {
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+.tech-stack-item:hover {
+    transform: scale(1.05);
+}
+.progress-bar-animated {
+    height: 8px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--gradient-start));
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+    border-radius: 4px;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+header {
+    background-color: var(--header-bg);
+    transition: background-color 0.3s ease;
+}
+/* Styles for desktop navigation links */
+.header-nav-desktop a {
+    color: var(--header-text);
+}
+.header-nav-desktop a:hover {
+    color: var(--link-hover-color);
+}
+
+.hero-section {
+     background-image: linear-gradient(to right, var(--hero-gradient-from), var(--hero-gradient-to));
+}
+.roadmap-item .absolute { 
+    background-color: var(--roadmap-item-circle-bg);
+}
+.roadmap-item h3 {
+    color: var(--roadmap-item-title-color);
+}
+.roadmap-item p, .roadmap-item i.text-blue-500 { 
+    color: var(--roadmap-item-text-color) !important; 
+}
+ .roadmap-item ul {
+    color: var(--roadmap-item-list-text-color);
+}
+.tech-stack-section {
+    background-color: var(--section-bg-gray);
+}
+.tech-stack-item h3 {
+    color: var(--roadmap-item-title-color); 
+}
+ .tech-stack-item ul {
+    color: var(--roadmap-item-list-text-color);
+}
+.contact-section {
+    background-color: var(--contact-bg);
+    color: var(--contact-text-color);
+}
+.contact-section input[type="email"] {
+    background-color: var(--contact-input-bg);
+    color: var(--contact-input-text);
+}
+.contact-section button[type="submit"] {
+    background-color: var(--contact-button-bg);
+    color: var(--button-text-color);
+}
+.contact-section button[type="submit"]:hover {
+    background-color: var(--contact-button-hover-bg);
+}
+.contact-section .text-blue-200 { 
+    color: var(--text-color); 
+    opacity: 0.7;
+}
+.dark .contact-section .text-blue-200 {
+     color: var(--text-color); 
+     opacity: 0.7;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+/* Burger Menu Specific Styles */
+.burger-icon {
+    color: var(--burger-icon-color);
+    transition: color 0.3s ease;
+}
+.mobile-menu {
+    background-color: var(--mobile-menu-bg);
+    color: var(--mobile-menu-text);
+    position: absolute; /* Or fixed, depending on desired behavior */
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0;
+    z-index: 40; /* Below header (z-50) but above content */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
+}
+.mobile-menu.open {
+    max-height: 100vh; /* Or a specific max height like 500px */
+    padding-top: 1rem; /* Equivalent to py-4 */
+    padding-bottom: 1rem;
+}
+.header-nav-mobile a {
+    color: var(--mobile-menu-text);
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+}
+.header-nav-mobile a:hover {
+    background-color: rgba(0,0,0,0.05); /* Subtle hover for light theme */
+}
+.dark .header-nav-mobile a:hover {
+    background-color: rgba(255,255,255,0.05); /* Subtle hover for dark theme */
+}
+.mobile-menu .theme-toggle-btn, .mobile-menu .lang-btn {
+    color: var(--mobile-menu-text);
+}
+.mobile-menu .lang-btn.active {
+    background-color: var(--link-color);
+    color: var(--button-text-color);
+}
+.mobile-menu .lang-btn:not(.active):hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.dark .mobile-menu .lang-btn:not(.active):hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+
+/* Theme switcher button style (shared for desktop and mobile) */
+.theme-toggle-btn i {
+    color: var(--header-text); /* Default icon color based on header text */
+}
+.dark .theme-toggle-btn i {
+    color: var(--header-text); /* Ensure it uses the dark theme header text color */
+}
+/* Mobile menu specific icon color if needed, but burger-icon class already handles it */
+.mobile-menu .theme-toggle-btn i {
+     color: var(--mobile-menu-text);
+}
+
+
+.lang-switcher button {
+    color: var(--header-text); /* Default for desktop */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0; /* Remove individual rounding for grouped buttons */
+    font-weight: 600;
+}
+.lang-switcher button:first-child {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.lang-switcher button:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+.lang-switcher button.active {
+    background-color: var(--link-color);
+    color: var(--button-text-color);
+}
+.lang-switcher button:hover:not(.active) {
+    background-color: var(--card-bg); 
+}
+
+/* Animation Styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.animate-on-scroll.is-visible.delay-1 { transition-delay: 0.1s; }
+.animate-on-scroll.is-visible.delay-2 { transition-delay: 0.2s; }
+.animate-on-scroll.is-visible.delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll.is-visible.delay-4 { transition-delay: 0.4s; }
+.animate-on-scroll.is-visible.delay-5 { transition-delay: 0.5s; }
+.animate-on-scroll.is-visible.delay-6 { transition-delay: 0.6s; }
+
+
+.hero-animate-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s 0.2s forwards ease-out;
+}
+.hero-animate-subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s 0.4s forwards ease-out;
+}
+.hero-animate-button {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleUp 0.6s 0.6s forwards ease-out;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes scaleUp {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

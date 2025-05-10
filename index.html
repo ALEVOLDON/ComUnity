@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="pageTitle">ComUnity - Дорожная карта</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold gradient-text" data-lang="appName">ComUnity</h1>
+            
+            <div class="hidden md:flex items-center header-controls-desktop"> 
+                <nav class="header-nav-desktop">
+                    <a href="#about" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-lang="navAbout">О проекте</a>
+                    <a href="#roadmap" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-lang="navRoadmap">Дорожная карта</a>
+                    <a href="#tech-stack" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-lang="navTechStack">Стек</a>
+                    <a href="#contact" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-lang="navContact">Контакты</a>
+                </nav>
+                <div class="flex items-center ml-4">
+                    <button id="theme-toggle-desktop" class="theme-toggle-btn focus:outline-none" aria-label="Toggle theme">
+                        <i class="fas fa-sun text-xl"></i>
+                    </button>
+                    <div class="lang-switcher ml-3">
+                        <button id="lang-ru-desktop" data-lang-btn="ru" class="lang-btn active">RU</button>
+                        <button id="lang-en-desktop" data-lang-btn="en" class="lang-btn">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden">
+                <button id="burger-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl burger-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+            <nav class="header-nav-mobile flex flex-col items-center py-4">
+                <a href="#about" class="block py-3 px-4 text-center w-full hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" data-lang="navAbout">О проекте</a>
+                <a href="#roadmap" class="block py-3 px-4 text-center w-full hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" data-lang="navRoadmap">Дорожная карта</a>
+                <a href="#tech-stack" class="block py-3 px-4 text-center w-full hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" data-lang="navTechStack">Стек</a>
+                <a href="#contact" class="block py-3 px-4 text-center w-full hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md" data-lang="navContact">Контакты</a>
+            </nav>
+            <div class="flex flex-col items-center py-4 border-t border-gray-300 dark:border-gray-700">
+                <button id="theme-toggle-mobile" class="theme-toggle-btn focus:outline-none mb-3 py-2 px-4 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 w-full text-center" aria-label="Toggle theme">
+                    <i class="fas fa-sun text-xl mr-2"></i> <span data-lang="toggleTheme">Сменить тему</span>
+                </button>
+                <div class="lang-switcher flex justify-center w-full">
+                    <button id="lang-ru-mobile" data-lang-btn="ru" class="lang-btn active py-2 px-4 rounded-l-md">RU</button>
+                    <button id="lang-en-mobile" data-lang-btn="en" class="lang-btn py-2 px-4 rounded-r-md">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 header-title hero-animate-title" data-lang="heroTitle">ComUnity: Объединяя Мир Голосом</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto hero-animate-subtitle" data-lang="heroSubtitle">
+                Революционное приложение, стирающее языковые барьеры и упрощающее коммуникацию.
+                Перевод в реальном времени вашим голосом, агрегация аккаунтов и многое другое.
+            </p>
+            <a href="#about" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 text-lg hero-animate-button" data-lang="heroButton">
+                Узнать больше <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animate-on-scroll" data-lang="aboutTitle">О Проекте и Его Возможностях</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 animate-on-scroll" data-lang="aboutKeyFeaturesTitle" style="color: var(--details-title-color);">Ключевые Функции и Преимущества</h3>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll delay-1">
+                        <h4 class="text-xl font-semibold mb-3" data-lang="aboutFeature1Title"><i class="fas fa-language mr-2 text-blue-500"></i>Мгновенный перевод и озвучивание голосом пользователя</h4>
+                        <p class="mb-2"><strong data-lang="aboutFeature1IdeaTitle">Идея:</strong> <span data-lang="aboutFeature1Idea">Фантастическая. Возможность общаться с любым человеком на земле не парясь о знании языка! Мало того ИИ переведённый текст может моментально озвучивать - а значит задержка в переводе будет минимальная и будет сокращаться с развитием устройств и самого ИИ! А это значит что язык не станет помехой! Общаясь с человеком находящимся на другом конце земли и разговаривающем на совсем другом языке (японский например) - будет происходить как будто по телефону разговаривают два японца или два русскоговорящих (если я это слышу)!</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature1TechTitle">Техническая реализация:</strong> <span data-lang="aboutFeature1Tech">Это самая сложная часть. Современные ИИ для перевода (как Google Translate, DeepL) и синтеза речи (как ElevenLabs, Resemble AI) уже очень продвинуты. Однако, достижение *мгновенной* задержки и *идеального* клонирования тембра в реальном времени для двустороннего разговора – это серьезный вызов. Потребуются огромные вычислительные мощности (либо на устройстве, либо в облаке с минимальной задержкой) и очень продвинутые алгоритмы.</span></p>
+                        <p><strong data-lang="aboutFeature1AdvantagesTitle">Преимущества:</strong> <span data-lang="aboutFeature1Advantages">Устранение языковых барьеров, естественность общения, повышение комфорта.</span></p>
+                    </div>
+
+                    <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll delay-2">
+                        <h4 class="text-xl font-semibold mb-3" data-lang="aboutFeature2Title"><i class="fas fa-users-cog mr-2 text-green-500"></i>Агрегация нескольких номеров/аккаунтов в один профиль</h4>
+                        <p class="mb-2"><strong data-lang="aboutFeature2IdeaTitle">Идея:</strong> <span data-lang="aboutFeature2Idea">Очень практично. Многие люди используют несколько SIM-карт или аккаунтов для разных целей (например, личный и рабочий номер). Объединение их под одним идентификатором с возможностью настройки приоритетов – отличное решение. Все эти номера соединяются в этом приложении в один аккаунт и высвечивается при звонке как один человек.</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature2ColorCodingTitle">Цветовая кодировка важности звонка:</strong> <span data-lang="aboutFeature2ColorCoding">Интуитивно понятный и полезный UX-элемент. Например, если звонить с определённого номера - по важности главного (срочного) - при звонке вы будете видеть например отображение имени(клички) звонящего - красным цветом(alert) - или когда обычный звонок - будет отображаться зелёным! А номера, которые настроены как не важные(не обязательные, не срочные) - будут идти на экран телефона синим (холодным) цветом! Это позволяет быстро оценить срочность звонка, не беря трубку.</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature2AdvantagesTitle">Преимущества:</strong> <span data-lang="aboutFeature2Advantages">Удобство управления контактами и звонками, повышение продуктивности, ясное понимание контекста звонка. Пользователи будут заводить себе несколько номеров.</span></p>
+                        <p><strong data-lang="aboutFeature2QuestionsTitle">Вопросы реализации:</strong> <span data-lang="aboutFeature2Questions">Как будет реализована привязка нескольких физических номеров? Будет ли это работать через VoIP-составляющую приложения или оно будет как-то перехватывать и агрегировать информацию о звонках на уровне ОС (что может быть сложно из-за ограничений платформ)?</span></p>
+                    </div>
+
+                    <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll delay-3">
+                        <h4 class="text-xl font-semibold mb-3" data-lang="aboutFeature3Title"><i class="fas fa-user-friends mr-2 text-purple-500"></i>Кнопка "Подружить" (моментальное добавление контакта)</h4>
+                        <p class="mb-2"><strong data-lang="aboutFeature3IdeaTitle">Идея:</strong> <span data-lang="aboutFeature3Idea">Отличный способ быстро обменяться контактами, особенно в незнакомой среде или при языковом барьере. Например, если вы приехали в другую страну и хотите что-то спросить у прохожего, а вы не знаете языка - с помощью мобильного устройства и нашего приложения - вы сможете моментально задать любой вопрос. Аналогия с NFC для платежей или QR-кодами для обмена данными.</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature3ProcessTitle">Процесс:</strong> <span data-lang="aboutFeature3Process">После нажатия кнопки "подружить" - если у человека уже установлено наше приложение - синхронизация происходит моментально. Если у пользователя нет приложения, к нему сразу придёт сообщение о предложении установить его – стандартная и правильная практика для роста пользовательской базы.</span></p>
+                        <p><strong data-lang="aboutFeature3AdvantagesTitle">Преимущества:</strong> <span data-lang="aboutFeature3Advantages">Упрощение нетворкинга, удобство для путешественников, быстрое начало общения на одном языке (каждый слышит собеседника на своем).</span></p>
+                    </div>
+
+                    <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll delay-4">
+                        <h4 class="text-xl font-semibold mb-3" data-lang="aboutFeature4Title"><i class="fas fa-microphone-alt mr-2 text-orange-500"></i>Идентификация по слепку голоса для незнакомых номеров</h4>
+                        <p class="mb-2"><strong data-lang="aboutFeature4IdeaTitle">Идея:</strong> <span data-lang="aboutFeature4Idea">Инновационно. Если Вам кто-то звонит с незнакомого номера - при поднятии трубки в базу заносится сразу новый слепок голоса, а если этот слепок уже был в базе - например если вы уже общались с этим человеком (существующий контакт) и его уже подписали - то новый (не знакомый) номер автоматически исправляется на подпись в момент когда произносятся звук голоса (идентифицируется слепок голоса с аккаунтом).</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature4TechTitle">Техническая реализация:</strong> <span data-lang="aboutFeature4Tech">Требует создания и поддержки базы голосовых слепков. Необходимо продумать вопросы приватности и точности распознавания (голос может меняться из-за болезни, шума и т.д.).</span></p>
+                        <p class="mb-2"><strong data-lang="aboutFeature4AdvantagesTitle">Преимущества:</strong> <span data-lang="aboutFeature4Advantages">Улучшенная идентификация звонящего, даже если номер новый или скрыт (если это технически возможно обойти для скрытых номеров).</span></p>
+                        <p><strong data-lang="aboutFeature4EthicsTitle">Этические моменты и приватность:</strong> <span data-lang="aboutFeature4Ethics">Сбор и хранение голосовых слепков – очень чувствительная тема. Необходимо будет четко прописать политику конфиденциальности и получить согласие пользователей. Как быть со звонками от людей, которые не давали согласия на создание их голосового слепка?</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 animate-on-scroll" data-lang="aboutAdditionalConsiderationsTitle" style="color: var(--details-title-color);">Дополнительные Соображения</h3>
+                <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll">
+                    <ul class="list-none space-y-4 md:list-disc md:list-inside">
+                        <li data-lang="aboutConsideration1"><i class="fas fa-headset mr-2 text-teal-500"></i><strong data-lang="aboutConsideration1Title">Мобильные гарнитуры:</strong> <span data-lang="aboutConsideration1Desc">Действительно, использование гарнитур сделает такое приложение еще более удобным, освобождая руки и позволяя вести естественный диалог.</span></li>
+                        <li data-lang="aboutConsideration2"><i class="fas fa-palette mr-2 text-pink-500"></i><strong data-lang="aboutConsideration2Title">Дизайн логотипа и бренда:</strong> <span data-lang="aboutConsideration2Desc">Идея использовать три цвета (синий, красный, зеленый) для логотипа, отражающие состояния/приоритеты – хорошая и логичная.</span></li>
+                        <li data-lang="aboutConsideration3"><i class="fas fa-crown mr-2 text-yellow-500"></i><strong data-lang="aboutConsideration3Title">Потенциал стать монополистом:</strong> <span data-lang="aboutConsideration3Desc">Да, если такое приложение будет реализовано на высоком уровне, оно действительно может изменить правила игры на рынке коммуникационных приложений. Оно объединяет в себе функции переводчика, мессенджера, умной телефонной книги и системы управления контактами.</span>
+                            <ul class="list-disc list-inside ml-6 mt-2">
+                                <li data-lang="aboutConsideration3Risk"><i class="fas fa-exclamation-triangle mr-2 text-red-500"></i><strong data-lang="aboutConsideration3RiskTitle">Опасность монополизма:</strong> <span data-lang="aboutConsideration3RiskDesc">С одной стороны, это может привести к улучшению стандартов, с другой – к отсутствию конкуренции, повышению цен (если будет платная модель) и потенциальным злоупотреблениям данными. Такое приложение может стать опасным, потому что вытеснит всё остальное.</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 animate-on-scroll" data-lang="aboutChallengesTitle" style="color: var(--details-title-color);">Потенциальные Вызовы и Риски</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-1"><i class="fas fa-cogs mr-2 text-red-600"></i><strong data-lang="challenge1Title">Техническая сложность:</strong> <span data-lang="challenge1Desc">Особенно в части мгновенного перевода с клонированием голоса в реальном времени.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-2"><i class="fas fa-coins mr-2 text-yellow-600"></i><strong data-lang="challenge2Title">Затраты на разработку и поддержку:</strong> <span data-lang="challenge2Desc">ИИ-технологии, облачная инфраструктура, постоянные обновления – все это требует значительных инвестиций.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-3"><i class="fas fa-shield-alt mr-2 text-blue-600"></i><strong data-lang="challenge3Title">Приватность и безопасность данных:</strong> <span data-lang="challenge3Desc">Сбор голосовых слепков, агрегация номеров – все это требует высочайшего уровня защиты данных и прозрачной политики конфиденциальности. GDPR и другие регуляции будут предъявлять строгие требования.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-4"><i class="fas fa-wifi mr-2 text-orange-600"></i><strong data-lang="challenge4Title">Зависимость от качества интернет-соединения:</strong> <span data-lang="challenge4Desc">Для облачных вычислений (перевод, синтез речи) потребуется стабильный и быстрый интернет.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-5"><i class="fas fa-battery-three-quarters mr-2 text-green-600"></i><strong data-lang="challenge5Title">Батарея устройства:</strong> <span data-lang="challenge5Desc">Активное использование микрофона, динамика, ИИ-обработки и сетевого соединения может быстро разряжать батарею мобильного устройства.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-6"><i class="fas fa-users mr-2 text-purple-600"></i><strong data-lang="challenge6Title">Принятие пользователями:</strong> <span data-lang="challenge6Desc">Несмотря на все преимущества, пользователей нужно будет убедить установить еще одно коммуникационное приложение и доверить ему свои данные. "Кнопка подружить" может помочь с вирусным распространением.</span></div>
+                    <div class="details-card p-4 rounded-lg shadow animate-on-scroll delay-1 lg:col-span-1 md:col-span-2 "><i class="fas fa-layer-group mr-2 text-indigo-600"></i><strong data-lang="challenge7Title">Интеграция с ОС:</strong> <span data-lang="challenge7Desc">Глубокая интеграция с телефонными функциями (перехват звонков, управление номерами) может быть ограничена операционными системами iOS и Android.</span></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 animate-on-scroll" data-lang="aboutSummaryNextStepsTitle" style="color: var(--details-title-color);">Итог и Дальнейшие Шаги</h3>
+                <div class="details-card p-6 rounded-lg shadow-lg mb-8 animate-on-scroll">
+                    <h4 class="text-xl font-semibold mb-3" data-lang="aboutSummaryTitle"><i class="fas fa-flag-checkered mr-2 text-green-500"></i>Итог</h4>
+                    <p data-lang="aboutSummaryText">Ваша идея обладает огромным потенциалом и затрагивает реальные потребности пользователей в глобализированном мире. Ключевые фишки – перевод с сохранением тембра и умная агрегация аккаунтов – очень привлекательны.</p>
+                </div>
+                <div class="details-card p-6 rounded-lg shadow-lg animate-on-scroll">
+                    <h4 class="text-xl font-semibold mb-3" data-lang="aboutNextStepsTitle"><i class="fas fa-shoe-prints mr-2 text-blue-500"></i>Что дальше?</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="aboutNextStep1"><i class="fas fa-search-dollar mr-2 text-green-500"></i><strong data-lang="aboutNextStep1Title">Исследование рынка:</strong> <span data-lang="aboutNextStep1Desc">Более детально изучить существующие решения, их сильные и слабые стороны.</span></li>
+                        <li data-lang="aboutNextStep2"><i class="fas fa-calculator mr-2 text-blue-500"></i><strong data-lang="aboutNextStep2Title">Технико-экономическое обоснование:</strong> <span data-lang="aboutNextStep2Desc">Оценить сложность и стоимость разработки ключевых функций.</span></li>
+                        <li data-lang="aboutNextStep3"><i class="fas fa-rocket mr-2 text-purple-500"></i><strong data-lang="aboutNextStep3Title">MVP (Минимально жизнеспособный продукт):</strong> <span data-lang="aboutNextStep3Desc">Определить, какие функции являются абсолютно необходимыми для первой версии, чтобы проверить гипотезу и собрать обратную связь. Возможно, начать с одной ключевой функции (например, перевод с клонированием голоса для аудиосообщений, а не звонков в реальном времени) и постепенно добавлять остальные.</span></li>
+                        <li data-lang="aboutNextStep4"><i class="fas fa-user-shield mr-2 text-red-500"></i><strong data-lang="aboutNextStep4Title">Вопросы приватности:</strong> <span data-lang="aboutNextStep4Desc">С самого начала продумать архитектуру с учетом максимальной защиты данных.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="w-full mt-8 mb-4">
+        <div class="progress-bar-animated mx-auto" style="width: 80%;"></div>
+    </div>
+
+    <section id="roadmap" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animate-on-scroll" data-lang="roadmapTitle">Дорожная Карта Проекта</h2>
+            <div class="space-y-12">
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-1">
+                    <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">1</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage1Title">Этап 1: Концепция и Планирование</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage1Date">Q3 2025 - Q4 2025</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage1Item1"><i class="fas fa-lightbulb mr-2 text-yellow-500"></i>Детальная проработка концепции и пользовательских сценариев.</li>
+                        <li data-lang="roadmapStage1Item2"><i class="fas fa-search mr-2 text-green-500"></i>Анализ рынка, конкурентов и целевой аудитории.</li>
+                        <li data-lang="roadmapStage1Item3"><i class="fas fa-file-alt mr-2 text-purple-500"></i>Формирование технических требований и спецификаций.</li>
+                        <li data-lang="roadmapStage1Item4"><i class="fas fa-users mr-2 text-red-500"></i>Подбор команды и определение методологии разработки (Agile).</li>
+                        <li data-lang="roadmapStage1Item5"><i class="fas fa-shield-alt mr-2 text-gray-500"></i>Планирование архитектуры с учетом безопасности и масштабируемости.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-2">
+                    <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">2</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage2Title">Этап 2: Дизайн UI/UX и Прототипирование</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage2Date">Q1 2026 - Q2 2026</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage2Item1"><i class="fas fa-palette mr-2 text-pink-500"></i>Разработка дизайна пользовательского интерфейса (UI).</li>
+                        <li data-lang="roadmapStage2Item2"><i class="fas fa-drafting-compass mr-2 text-indigo-500"></i>Проектирование пользовательского опыта (UX).</li>
+                        <li data-lang="roadmapStage2Item3"><i class="fas fa-mobile-alt mr-2 text-teal-500"></i>Создание интерактивных прототипов для мобильных и десктопных платформ.</li>
+                        <li data-lang="roadmapStage2Item4"><i class="fas fa-comments mr-2 text-orange-500"></i>Сбор обратной связи по прототипам от фокус-групп.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-3">
+                     <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">3</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage3Title">Этап 3: Разработка MVP (Минимально Жизнеспособного Продукта)</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage3Date">Q2 2026 - Q4 2026</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage3Item1"><i class="fas fa-code mr-2 text-red-600"></i>Разработка бэкенда: API, базы данных, ИИ-модули (перевод, голос).</li>
+                        <li data-lang="roadmapStage3Item2"><i class="fas fa-mobile-alt mr-2 text-green-600"></i>Разработка мобильных приложений (iOS, Android).</li>
+                        <li data-lang="roadmapStage3Item3"><i class="fas fa-desktop mr-2 text-purple-600"></i>Разработка десктопного приложения.</li>
+                        <li data-lang="roadmapStage3Item4"><i class="fas fa-cogs mr-2 text-yellow-600"></i>Интеграция ключевых функций: перевод, клонирование голоса (базовое), агрегация аккаунтов.</li>
+                        <li data-lang="roadmapStage3Item5"><i class="fas fa-network-wired mr-2 text-gray-500"></i>Настройка инфраструктуры (серверы, облачные сервисы).</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-4">
+                    <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">4</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage4Title">Этап 4: Тестирование и Итерации</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage4Date">Q1 2027</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage4Item1"><i class="fas fa-bug mr-2 text-red-500"></i>Альфа-тестирование (внутреннее).</li>
+                        <li data-lang="roadmapStage4Item2"><i class="fas fa-users-cog mr-2 text-teal-500"></i>Бета-тестирование (ограниченная группа пользователей).</li>
+                        <li data-lang="roadmapStage4Item3"><i class="fas fa-chart-line mr-2 text-orange-500"></i>Сбор обратной связи, исправление ошибок, оптимизация производительности.</li>
+                        <li data-lang="roadmapStage4Item4"><i class="fas fa-lock mr-2 text-indigo-500"></i>Тестирование безопасности.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-5">
+                    <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">5</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage5Title">Этап 5: Запуск</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage5Date">Q2 2027</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage5Item1"><i class="fas fa-rocket mr-2 text-green-500"></i>Публичный запуск мобильных и десктопного приложений.</li>
+                        <li data-lang="roadmapStage5Item2"><i class="fas fa-bullhorn mr-2 text-yellow-500"></i>Маркетинговая кампания и PR.</li>
+                        <li data-lang="roadmapStage5Item3"><i class="fas fa-headset mr-2 text-purple-500"></i>Настройка системы поддержки пользователей.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item p-6 md:p-8 rounded-lg shadow-lg relative animate-on-scroll delay-6">
+                    <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">6</div>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang="roadmapStage6Title">Этап 6: Пост-релизное Развитие и Рост</h3>
+                    <p class="mb-2"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i><span data-lang="roadmapStage6Date">Постоянно</span></p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li data-lang="roadmapStage6Item1"><i class="fas fa-recycle mr-2 text-teal-500"></i>Сбор аналитики и обратной связи от пользователей.</li>
+                        <li data-lang="roadmapStage6Item2"><i class="fas fa-plus-circle mr-2 text-green-500"></i>Разработка новых функций (например, улучшенное клонирование голоса, групповые звонки с переводом, интеграции).</li>
+                        <li data-lang="roadmapStage6Item3"><i class="fas fa-globe-americas mr-2 text-indigo-500"></i>Расширение на новые рынки и языки.</li>
+                        <li data-lang="roadmapStage6Item4"><i class="fas fa-sync-alt mr-2 text-orange-500"></i>Регулярные обновления и улучшения производительности/безопасности.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="tech-stack-section py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animate-on-scroll" data-lang="techStackTitle">Предлагаемый Технологический Стек</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-1">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-mobile-alt mr-2 text-blue-500"></i><span data-lang="techStackFrontendTitle">Frontend (Клиентская часть)</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackFrontendItem1"><strong>Мобильные приложения:</strong> Swift/Objective-C (iOS), Kotlin/Java (Android), или кросс-платформенные фреймворки как React Native / Flutter.</li>
+                        <li data-lang="techStackFrontendItem2"><strong>Десктопное приложение:</strong> Electron, Tauri, или нативные технологии (Swift/Objective-C для macOS, C#/.NET для Windows).</li>
+                        <li data-lang="techStackFrontendItem3"><strong>Веб-технологии (для сайта/веб-версии):</strong> React, Vue.js, или Angular.</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-2">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-server mr-2 text-blue-500"></i><span data-lang="techStackBackendTitle">Backend (Серверная часть)</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackBackendItem1"><strong>Языки программирования:</strong> Python (Django/Flask), Node.js (Express), Go, Java (Spring).</li>
+                        <li data-lang="techStackBackendItem2"><strong>Базы данных:</strong> PostgreSQL, MongoDB, Cassandra (для масштабируемости).</li>
+                        <li data-lang="techStackBackendItem3"><strong>Кэширование:</strong> Redis, Memcached.</li>
+                        <li data-lang="techStackBackendItem4"><strong>Очереди сообщений:</strong> RabbitMQ, Kafka (для асинхронных задач).</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-3">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-brain mr-2 text-blue-500"></i><span data-lang="techStackAiMlTitle">ИИ и Машинное обучение</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackAiMlItem1"><strong>Перевод:</strong> Google Cloud Translation API, DeepL API, OpenNMT, или собственные модели.</li>
+                        <li data-lang="techStackAiMlItem2"><strong>Синтез и клонирование речи:</strong> Google Text-to-Speech, ElevenLabs API, Resemble AI, Lyrebird (ныне Descript), или разработка собственных моделей на базе Tacotron, WaveNet.</li>
+                        <li data-lang="techStackAiMlItem3"><strong>Распознавание речи:</strong> Google Speech-to-Text, Wit.ai, CMU Sphinx.</li>
+                        <li data-lang="techStackAiMlItem4"><strong>Фреймворки:</strong> TensorFlow, PyTorch.</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-4">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-cloud mr-2 text-blue-500"></i><span data-lang="techStackInfraTitle">Инфраструктура и DevOps</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackInfraItem1"><strong>Облачные платформы:</strong> AWS, Google Cloud Platform, Microsoft Azure.</li>
+                        <li data-lang="techStackInfraItem2"><strong>Контейнеризация:</strong> Docker, Kubernetes.</li>
+                        <li data-lang="techStackInfraItem3"><strong>CI/CD:</strong> Jenkins, GitLab CI, GitHub Actions.</li>
+                        <li data-lang="techStackInfraItem4"><strong>Мониторинг:</strong> Prometheus, Grafana, ELK Stack.</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-5">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-comments mr-2 text-blue-500"></i><span data-lang="techStackRealtimeTitle">Коммуникации в реальном времени</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackRealtimeItem1"><strong>Протоколы:</strong> WebRTC (для аудио/видео звонков), SIP.</li>
+                        <li data-lang="techStackRealtimeItem2"><strong>Сигнализация:</strong> WebSocket.</li>
+                    </ul>
+                </div>
+                 <div class="p-6 rounded-lg shadow-lg tech-stack-item animate-on-scroll delay-6">
+                    <h3 class="text-xl font-semibold mb-3"><i class="fas fa-shield-alt mr-2 text-blue-500"></i><span data-lang="techStackSecurityTitle">Безопасность</span></h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li data-lang="techStackSecurityItem1"><strong>Шифрование:</strong> End-to-end encryption (E2EE) для сообщений и звонков.</li>
+                        <li data-lang="techStackSecurityItem2"><strong>Аутентификация:</strong> OAuth 2.0, OpenID Connect.</li>
+                        <li data-lang="techStackSecurityItem3"><strong>Защита данных:</strong> Соответствие GDPR, CCPA и другим регуляциям.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll" data-lang="contactTitle">Заинтересовались ComUnity?</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto animate-on-scroll delay-1" data-lang="contactSubtitle">
+                Мы усердно работаем над созданием будущего коммуникаций.
+                Подпишитесь, чтобы получать обновления о нашем прогрессе и дате запуска!
+            </p>
+            <form class="max-w-md mx-auto animate-on-scroll delay-2">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" data-lang-placeholder="contactEmailPlaceholder" placeholder="Ваш email" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400" required>
+                    <button type="submit" class="font-bold py-3 px-6 rounded-lg transition duration-300 w-full sm:w-auto" data-lang="contactButton">
+                        Подписаться
+                    </button>
+                </div>
+            </form>
+            <p class="mt-6 text-sm animate-on-scroll delay-3" data-lang="contactPrivacy">Мы уважаем вашу конфиденциальность. Никакого спама.</p>
+        </div>
+    </section>
+
+    <footer class="py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="currentYear"></span> <span data-lang="appNameFooter">ComUnity</span>. <span data-lang="footerRights">Все права защищены.</span></p>
+            <p class="text-sm mt-1" data-lang="footerSlogan">Создаем будущее без языковых барьеров.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
